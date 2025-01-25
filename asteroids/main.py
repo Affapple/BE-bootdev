@@ -47,6 +47,11 @@ def main() -> None:
             if event.type == pygame.QUIT:
                 RUN = False
 
+        for asteroid in asteroids:
+            if player.checkCollision(asteroid):
+                print("Game Over!")
+                RUN = False
+
         dt = clock.tick(FPS) / 1000
 
 
